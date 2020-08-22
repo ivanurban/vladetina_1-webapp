@@ -25,7 +25,7 @@ SECRET_KEY = 'ttrfksv_x(=8zpb!b4cqmx3!6g5+$j^q8y8*7qppmbm3-l*uk='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
