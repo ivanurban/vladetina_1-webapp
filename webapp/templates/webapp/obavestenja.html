@@ -1,0 +1,76 @@
+{% extends "webapp/base.html" %}
+
+{% load static %}
+
+{% block title%} Obavestenja {% endblock %}
+
+
+
+
+
+
+{% block nav %}
+
+
+
+						<nav>
+									<ul class="nav_links">
+										<li><a  class="nav_link" href="{% url 'webapp:home_page' %}">Početna</a></li>
+										<li><a  class="nav_link obavestenja_link" href="{% url 'webapp:obavestenja_page' %}">Obaveštenja</a></li>
+										<li><a  class="nav_link" href="{% url 'webapp:contact_page' %}">Kontakt</a></li>
+
+									</ul>
+						</nav>
+
+
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<h1>Obaveštenja</h1>
+
+{% for obavestenje in obavestenja %}
+
+
+    
+						
+
+						  	
+					<a href="{{ obavestenje.get_absolute_url }}">	<h2>{{ obavestenje.naslov }}</h2></a>
+						<p class="date">{{ obavestenje.datum_objave | date:"d/m/Y" }}</p>
+						<p>{{ obavestenje.sadrzaj|truncatewords:30|linebreaks }}</p>
+						<hr>
+
+
+			
+
+{% endfor %}
+ 
+			
+			
+<!-- 		{{ myDate | date:"D d M Y"}}  # Format Wed 09 Jan 2008
+{{ myDate | date:"SHORT_DATE_FORMAT"}}  # Format 09/01/2008
+{{ myDate | date:"d/m/Y"}}  # Format 09/01/2008		 -->
+
+				
+
+
+				
+               
+{% endblock %}
+
+
+     {% block paginator%}
+
+ 		
+				
+
+			<h4>	{% include "pagination.html" with page=obavestenja %} </h4>
+
+			
+
+      {% endblock %}

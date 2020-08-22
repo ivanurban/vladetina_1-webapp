@@ -1,0 +1,175 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,500&display=swap" rel="stylesheet"> 
+
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+
+
+	<title></title>
+
+  </head>
+  <body>
+
+
+
+	<div id="wrap"> <!-- begin wrap -> (for sticky footer setting) -->
+		
+
+
+
+		<div id="sub_wrap" class="clearfix"> <!-- begin subwrap -> (for sticky footer setting) -->
+			
+	
+
+				<header>
+					
+				<!-- Logo i search box trebalo bi da budu u istoj liniji, logo levo box desno	 -->
+
+					<div class="search_box">
+							
+						<form  action="{% url 'webapp:obavestenja_page' %}"  accept-charset="uf-8">
+						
+						
+						<input class="search_text_box" type="search" name="text_search" value="" placeholder="Search">
+
+						<button class="search_button" type="submit"  >Pretrazi</button>
+
+						</form>
+					</div>
+
+
+
+
+						<div class="logo_container">
+									Vladetina 1
+									<!-- <img src="#" alt="logo"> -->
+								</div>
+
+
+
+
+
+
+							<div class="login-register_nav">		
+
+								<ul>
+									<li><a href="#">Login</a></li>
+									<li style="color:#c3c4d0;">/</li>
+									<li><a  href="#"> Registracija</a></li>
+									
+
+								</ul>
+
+							</div>
+
+
+
+
+
+				</header>
+
+
+				{% block nav %}
+				<!-- navigacija u liniji ispod loga i searh boxa
+				 -->		
+				 		<nav>
+									<ul class="nav_links">
+										<li><a  class="nav_link" href="{% url 'webapp:home_page' %}">Početna</a></li>
+										<li><a class="nav_link" href="{% url 'webapp:obavestenja_page' %}">Obaveštenja</a></li>
+										<li><a class="nav_link" href="{% url 'webapp:contact_page' %}">Kontakt</a></li>
+
+									</ul>
+						</nav>
+
+					
+				{% endblock %}
+
+
+
+				<main>
+
+
+	
+
+							<section class="presentation">
+
+								{% block content %}
+
+								{% endblock %}
+
+
+								{% block paginator %}
+
+								{% endblock %}
+
+								
+							</section>
+
+
+							<div class="grad-trans">
+								
+							</div>
+
+
+
+					<section class="sub_presentation">
+
+
+						<div class="column">
+							<a href="http://www.palilula.org.rs/" target="_blank"><img src="{% static '/img/palilula-grb.png' %}" alt="grb-palilula"></a>
+
+						</div>
+
+
+						<div class="column">
+							<a href="#"><img class="trans" src="{% static '/img/serbia.png' %}" alt="grb-beograd"></a>
+
+						</div>
+
+
+
+
+
+
+						<div class="column">
+							<a href="http://www.beograd.rs/" target="_blank"><img src="{% static '/img/grb-beograda.png' %}" alt="grb-beograd"></a>
+
+						</div>
+						
+					</section>
+					
+					
+				</main>
+
+
+
+			</div> <!-- end subwrap -> (for sticky footer setting) -->
+
+
+	</div> <!-- end wrap -> (for sticky footer setting) -->
+
+
+
+				<div class="footer">
+				   
+					<h4>Copyright © 2020</h4>
+
+				</div>
+
+
+
+	
+  </body>
+</html>

@@ -1,0 +1,60 @@
+{% extends "webapp/base.html" %}
+
+
+{% load static %}
+
+
+
+
+{% block title%} Početna {% endblock %}
+
+
+
+
+
+{% block nav %}
+
+
+
+						<nav>
+									<ul class="nav_links">
+										<li><a  class="nav_link" href="{% url 'webapp:home_page' %}">Početna</a></li>
+										<li><a  class="nav_link" href="{% url 'webapp:obavestenja_page' %}">Obaveštenja</a></li>
+										<li><a   class="nav_link kontakt_link" href="{% url 'webapp:contact_page' %}">Kontakt</a></li>
+
+									</ul>
+						</nav>
+
+
+
+
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+	
+<h1>Kontakt</h1>
+<h3>Predsednik kućnog saveta</h3>
+
+<ul class="contact">
+	
+	<li><h4>Mirko Dragićević</h4></li>
+	<li><h4>Adresa:</h4></li>
+	<li><h4>Telefon:</h4></li>
+</ul>
+
+
+
+
+
+
+
+{% endblock %}

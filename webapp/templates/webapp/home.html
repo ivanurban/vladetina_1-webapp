@@ -1,0 +1,46 @@
+{% extends "webapp/base.html" %}
+
+
+{% load static %}
+
+
+{% block title%} Početna {% endblock %}
+
+
+
+{% block nav %}
+
+
+
+						<nav>
+									<ul class="nav_links">
+										<li><a  class="nav_link home_link" href="{% url 'webapp:home_page' %}">Početna</a></li>
+										<li><a  class="nav_link" href="{% url 'webapp:obavestenja_page' %}">Obaveštenja</a></li>
+										<li><a   class="nav_link" href="{% url 'webapp:contact_page' %}">Kontakt</a></li>
+
+									</ul>
+						</nav>
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{% block content %}
+
+
+
+
+
+
+
+{% endblock %}
