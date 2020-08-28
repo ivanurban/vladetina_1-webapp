@@ -16,6 +16,13 @@ urlpatterns = [
 
 	path('<int:year>/<int:month>/<int:day>/<slug:obavestenje>/', views.obavestenje_detalji, name='obavestenje_detalji'),
 
+	path('finansije/', views.finansije_page, name='finansije_page'),
+
+
+
+	path('obavestenja/novo-obavestenje/', views.obavestenje_dodaj, name='obavestenje_dodaj'),
+
 
 
 ]
+

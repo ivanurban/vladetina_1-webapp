@@ -1,0 +1,34 @@
+1.IMPLEMENTACIJA dadavanja novog obavestenja sa mogućnošću uplod-a  pdf-ova
+
+		1.1. Dodat:
+
+			if settings.DEBUG:
+		    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+		unutar glavnog projekta urls.py. Moćda i trebalo dodati to unutar webapp urls.py
+
+		1.2. U settings.py dodato:
+
+			MEDIA_ROOT = os.path.join(BASE_DIR, 'webapp/media' ) -> pitanje da li ovo ok!
+
+
+			MEDIA_URL = '/media/'
+
+		
+		1.3  u model dodato polje za pdf folder je u webapp/media/pdfs
+
+	
+
+		1.4 u forms.py napraviti formu za dodavanje novog obavestenja sa novim poljem za pdf unos
+
+
+		1.5 napraviti view za dodavanje novog obavestenja sa opcijom upload pdf
+
+		1.6 na dodaj_obavestenje napraviti fomu za unos svih podataka
+
+		1.7 na details view dodati opciju za downolad unetog pdfa, neka bude link na kraju teksta.
+
+		TODO: 
+		Klikom na dugme novo obavestenje se unese ali ne i izabrani pdf, tek na admin strani dokument moze da se unese,
+		verovatno view trba drugacije da se uradi, da se spoji nekako dodaj i upoad view? ili 
+
+		dva viewa i onda include upload view na dodaj _obavestenje_view include....

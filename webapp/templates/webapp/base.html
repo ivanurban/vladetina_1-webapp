@@ -11,13 +11,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+
+
+    <meta http-equiv="cache-control" content="max-age=0">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta http-equiv="expires" content="Tue, 01 Jan 1980 11:00:00 GMT">
+	<meta http-equiv="pragma" content="no-cache">
+
+
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,500&display=swap" rel="stylesheet"> 
 
 	<link rel="stylesheet" href="{% static 'css/base.css' %}">
 
+	<script src="{% static 'js/active_nav_page.js' %}" type="text/javascript" charset="utf-8" async defer></script>
 
 
 	<title></title>
+
+
+<script>
+	
+
+
+// function setActive() {
+//   // aObj = document.getElementById('active_nav').getElementsByTagName('a');
+ 
+//   let last='';
+//   aObj = document.getElementById('active_nav').getElementsByTagName('a');
+
+//   console.log(aObj)
+
+// 	  for(i=0;i<aObj.length;i++) { 
+// 		    if(document.location.href.indexOf(aObj[i].href)>=0) {
+		      
+// 		      last = aObj[i];
+		  
+// 			 }		
+// 	   }
+
+//    last.className = 'active';	 	  
+// }
+
+
+
+// window.onload = setActive;
+
+
+
+</script>
+
 
   </head>
   <body>
@@ -81,20 +125,30 @@
 				</header>
 
 
-				{% block nav %}
 				<!-- navigacija u liniji ispod loga i searh boxa
 				 -->		
-				 		<nav>
-									<ul class="nav_links">
-										<li><a  class="nav_link" href="{% url 'webapp:home_page' %}">Početna</a></li>
-										<li><a class="nav_link" href="{% url 'webapp:obavestenja_page' %}">Obaveštenja</a></li>
-										<li><a class="nav_link" href="{% url 'webapp:contact_page' %}">Kontakt</a></li>
+				 		<nav id="active_nav" >
+									<ul >
+										<li><a  href="{% url 'webapp:home_page' %}">Početna</a></li>
+
+										<li><a  href="{% url 'webapp:obavestenja_page' %}">Obaveštenja</a></li>
+										<li><a  href="{% url 'webapp:contact_page' %}">Kontakt</a></li>
+
+									
+
+										<li><a  href="{% url 'webapp:finansije_page' %}">Finansije</a></li>
+
+										<!-- <li><a  href="{% url 'webapp:about_page' %}">O-nama</a></li> -->
+
+
+									
+
 
 									</ul>
 						</nav>
 
-					
-				{% endblock %}
+				
+			
 
 
 
@@ -113,6 +167,9 @@
 								{% block paginator %}
 
 								{% endblock %}
+
+
+						
 
 								
 							</section>
@@ -149,6 +206,23 @@
 						</div>
 						
 					</section>
+
+
+
+							<div class="grad-trans">
+								
+							</div>
+
+
+					<section class="sub_presentation2">
+						
+
+
+
+
+					</section>
+
+
 					
 					
 				</main>

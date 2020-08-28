@@ -6,30 +6,12 @@
 
 
 
-{% block title%} Početna {% endblock %}
+{% block title%} Kontakt {% endblock %}
 
 
 
 
 
-{% block nav %}
-
-
-
-						<nav>
-									<ul class="nav_links">
-										<li><a  class="nav_link" href="{% url 'webapp:home_page' %}">Početna</a></li>
-										<li><a  class="nav_link" href="{% url 'webapp:obavestenja_page' %}">Obaveštenja</a></li>
-										<li><a   class="nav_link kontakt_link" href="{% url 'webapp:contact_page' %}">Kontakt</a></li>
-
-									</ul>
-						</nav>
-
-
-
-
-
-{% endblock %}
 
 {% block content %}
 
@@ -42,7 +24,7 @@
 
 	
 <h1>Kontakt</h1>
-<h3>Predsednik kućnog saveta</h3>
+<!-- <h3>Predsednik kućnog saveta</h3>
 
 <ul class="contact">
 	
@@ -52,9 +34,26 @@
 </ul>
 
 
+ -->
+
+ {% for kontakt in kontakti %}
+
+
+
+	<h3 class="contact">{{ kontakt.funkcija }}</h3>
+	
+ 	<ul class="contact">
+	
+	<li class="contact">Ime i prezime: {{ kontakt.ime}} {{ kontakt.prezime }}</li>
+	<li class="contact">Adresa: {{ kontakt.adresa }}</li>
+	<li class="contact">Telefon: {{ kontakt.telefon }}</li>
+</ul>
 
 
 
 
+
+<hr>
+{% endfor %}
 
 {% endblock %}

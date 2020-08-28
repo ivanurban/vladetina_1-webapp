@@ -19,6 +19,7 @@ background-size: cover;
 
 
 
+
 height: 100%;/*from sticky footer settings*/
 
 
@@ -48,7 +49,7 @@ height: 100%;/*from sticky footer settings*/
 
 /*BEGIN ALL FOR STICKY FOOTER SETTONGS plus height setting in body tag*/
 body > #wrap {
-    height: auto;
+    height: auto; /*Ovo povecava visinu automatski u skladu sa sadrzajem*/
     min-height: 100%;
 }
 
@@ -128,18 +129,19 @@ header {
 
 }
 
-.logo_container, .search-box .login-register_nav{
+/* .logo_container, .search-box .login-register_nav{
 
 
 			display: flex;
 
 
 }
-
+ */
 .search_box{
 
 
 	flex: 1;
+
 }
 
 
@@ -180,6 +182,7 @@ header {
 		font-weight: bold;
 
 
+
 }
 
 
@@ -190,7 +193,7 @@ header {
 
 		flex: 1;
 		margin-right: 10px;
-			 text-transform: uppercase;
+		text-transform: uppercase;
 
 	/* visibility: hidden; */ /*da uklonim sadrzaj a da ostavim tag*/
 	/*  display: none; */ /*da uklonim i tag i sadrzaj*/
@@ -234,90 +237,97 @@ color: #c3c4d0;
 
 /*Navigation*/
 
-nav{
+nav {
 
-	/* background: #8e1919; */
-/* 	background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6+ */
-background: -moz-linear-gradient(top, rgba(169,3,41,1) 13%, rgba(143,2,34,1) 31%, rgba(109,0,25,1) 100%); /* FF3.6-15 */	
-/* border-top-style: solid;
-	border-top-width: 1px; */
+   width: 100%;
+    background: -moz-linear-gradient(top, rgba(169,3,41,1) 13%, rgba(143,2,34,1) 31%, rgba(109,0,25,1) 100%); FF3.6-15	
 
-/* border-bottom-style: solid;
-	border-bottom-width: 1px;	 */
+    border-color: #000000;
+    border-bottom-style: solid;
+    border-bottom-width: .5px;
+   /*  min-width: 511px; */
 
-	/* border-color: #b1b6ba; */
-	border-color: #000000;
+
+   
+
 
 }
 
 
 nav ul{
 
-		
-  	display: flex;
-  	height: 30px;
-	align-items:center;
+    height: 30px;	   
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    padding-top: 3px;
 
-		  
-		
-		
-}
-
-nav a{
-
-
-		color: #c3c4d0;
-		text-decoration: none;
-		 text-transform: uppercase;
-
-
-}
-
-a.home_link{
-
-	color: black;
-	background-color: #d4dbe3;
-	padding: 4px;
+			  
 	
 }
 
 
-a.obavestenja_link{
+nav li{
 
-color: black;
-background-color: #dbe2ec;
-padding: 4px;
+
+    float: left;
+    margin-left: 0px;
+
+
+
+  
+
+}
+
+nav a{
+
+    display: block;
+   
+ 
+    color: #c3c4d0;
+   
+/*     padding-top:  4px; */
+
+    margin-left: 120px ;
+
+    text-decoration: none;
+    text-transform: uppercase;
+  
+
+
+     /*      background-color: black; */
 
 }
 
 
 
-a.kontakt_link{
-
-color: black;
-background-color:#e3ebfa;
-padding: 4px;
-
+/* 
+nav li.active {
+    background-color:green;
+}
+nav   li.active a {
+    color:#fff;
+    font-weight:bold;
 }
 
+ */
+
+#active_nav ul li .active {
+    border-bottom:3px #FFF solid;
+    }
 
 
 
 nav a:hover{
 
-color: blue; 
-text-decoration: underline; 
+color: #2061a6; 
+
 font-weight: bold;
 
 }
 
 
-.nav_links {
-
-	justify-content: space-around;
-	list-style: none; /*sklonio bullete iz uedjene liste*/
-
-} 
 
 
 
@@ -326,10 +336,15 @@ font-weight: bold;
 /* 
 	display: flex; */
 	width:60%;
+/*   height: auto; */
 	margin:auto; /*stavis da bi podjednako s obe strane smanjio kad je sirina manja od 100%*/
 	min-height: 90vh;	
 	align-items: center;
-	margin-top: 80px;
+	margin-top: 50px;
+  margin-bottom: 60px;
+
+  
+
 
 
 }
@@ -385,12 +400,46 @@ font-weight: bold;
 
 	font-size: 18px;
 	color: black;
+  margin-top: 20px;
 	padding-bottom: 20px;
+
 
 
 }
 
+
+/*image on home page*/
+.imageFloatRight{
+  
+
+  float:right;
+  margin:10px;
+  width:250px;
+
+
+}
+
+.imageFloatLeft{
+  
+
+  float:left;
+  margin:10px;
+  width:250px;
+
+
+}
+
+
+.toClear {clear:both;} /*It pushes the tag that has 'clear: both' applied, past any floated tags.*/
+
+
+
+
+
+/*Between presentation an sub-presentation */
 .grad-trans{
+
+
 
 	width: 100%;
 	height: 25px;
@@ -423,6 +472,32 @@ font-weight: bold;
 
 
 
+.sub_presentation2{
+
+
+ width: 100%;
+ min-height: 40em;
+ margin: auto;
+
+
+
+
+
+  background-image: url('../img/panorama-beograd.jpeg');
+ background-repeat: no-repeat;
+
+background-position: center;
+background-size: cover;
+
+ -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+
+
+
+}
+
+
+
 
 
 
@@ -441,11 +516,6 @@ font-weight: bold;
 
 }
 
-
-
-
-
-
 .column img{
 
 	
@@ -463,14 +533,35 @@ font-weight: bold;
 }
 
 
-
+/*Settings for contact.html page*/
 ul.contact  {
 
 	list-style-type: square;
-	margin-left: 20px;
+	
+  margin: 0px 0px 20px 20px;
+
+
+}
+
+ul li.contact{
+
+font-size: 16px;
+
+}
+
+h3.contact{
+
+font-size: 22px;
+  color: #000000;
+  margin-top: 10px;
+ 
+
 }
 
 
+
+
+/*End Settings for contact.html page*/
 
 
 img.trans{
@@ -478,175 +569,28 @@ img.trans{
 opacity: 0.8;
 
 }
-/*Search button code*/
 
-/* .tb
-{
-    display: table;
-    width: 100%;
-}
 
-.td
-{
-    display: table-cell;
-    vertical-align: middle;
-}
 
-input, button
-{
-    color: #fff;
-    font-family: Nunito;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    background-color: transparent;
-}
 
-#cover
-{
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    width: 550px;
-    padding: 35px;
-    margin: -83px auto 0 auto;
-    background-color: #ff7575;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
-    transform: scale(0.6);
-}
 
-form
-{
-    height: 96px;
-}
+/*Finansije page*/
 
-input[type="text"]
-{
-    width: 100%;
-    height: 96px;
-    font-size: 60px;
-    line-height: 1;
-}
 
-input[type="text"]::placeholder
-{
-    color: #e16868;
-}
 
-#s-cover
-{
-    width: 1px;
-    padding-left: 35px;
-}
 
-button
-{
-    position: relative;
-    display: block;
-    width: 84px;
-    height: 96px;
-    cursor: pointer;
-}
 
-#s-circle
-{
-    position: relative;
-    top: -8px;
-    left: 0;
-    width: 43px;
-    height: 43px;
-    margin-top: 0;
-    border-width: 15px;
-    border: 15px solid #fff;
-    background-color: transparent;
-    border-radius: 50%;
-    transition: 0.5s ease all;
-}
+/*end finansije page*/
 
-button span
-{
-    position: absolute;
-    top: 68px;
-    left: 43px;
-    display: block;
-    width: 45px;
-    height: 15px;
-    background-color: transparent;
-    border-radius: 10px;
-    transform: rotateZ(52deg);
-    transition: 0.5s ease all;
-}
 
-button span:before, button span:after
-{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 45px;
-    height: 15px;
-    background-color: #fff;
-    border-radius: 10px;
-    transform: rotateZ(0);
-    transition: 0.5s ease all;
-}
 
-#s-cover:hover #s-circle
-{
-    top: -1px;
-    width: 67px;
-    height: 15px;
-    border-width: 0;
-    background-color: #fff;
-    border-radius: 20px;
-}
 
-#s-cover:hover span
-{
-    top: 50%;
-    left: 56px;
-    width: 25px;
-    margin-top: -9px;
-    transform: rotateZ(0);
-}
 
-#s-cover:hover button span:before
-{
-    bottom: 11px;
-    transform: rotateZ(52deg);
-}
 
-#s-cover:hover button span:after
-{
-    bottom: -11px;
-    transform: rotateZ(-52deg);
-}
-#s-cover:hover button span:before, #s-cover:hover button span:after
-{
-    right: -6px;
-    width: 40px;
-    background-color: #fff;
-}
 
-#ytd-url {
-  display: block;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  padding: 10px 14px;
-  margin: 20px;
-  color: #fff;
-  font-family: Nunito;
-  font-size: 14px;
-  text-decoration: none;
-  background-color: #ff7575;
-  border-radius: 4px;
-  box-shadow: 0 10px 20px -5px rgba(255, 117, 117, 0.86);
-  z-index: 125;
-}
- */
+
+
+
 
  /*responsive*/
 

@@ -22,6 +22,8 @@ class Obavestenje(models.Model):
 
 	sadrzaj = models.TextField()
 
+	dokument = models.FileField(upload_to='pdfs/', blank=True)
+
 	datum_objave = models.DateTimeField(default=timezone.now)
 
 	kreiran = models.DateTimeField(auto_now_add=True)
@@ -42,5 +44,13 @@ class Obavestenje(models.Model):
 	def get_absolute_url(self):
 		return reverse('webapp:obavestenje_detalji',args=[self.datum_objave.year, self.datum_objave.month, self.datum_objave.day, self.slug])
 
+
+
+class Kontakt(models.Model):
+	funkcija = models.CharField(max_length=250)
+	ime = models.CharField(max_length=50)
+	prezime = models.CharField(max_length=100)
+	adresa = models.CharField(max_length=250)
+	telefon = models.CharField(max_length=50)
 
 

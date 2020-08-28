@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Obavestenje
+from .models import Obavestenje, Kontakt
 
 # Register your models here.
 
@@ -18,3 +18,6 @@ class ObavestenjeAdmin(admin.ModelAdmin):
 	date_hierarchy = 'datum_objave'
 
 	ordering = ('status', 'datum_objave')
+
+
+admin.site.register(Kontakt)
